@@ -1,0 +1,12 @@
+.SearchBar{
+    padding:20px;
+    background-color: #9ba9d6;
+    margin-top: 50px;
+    font-size: larger;
+    position: relative;
+    border-radius: 5px;
+}
+.SearchBar:hover{
+    background-color: #6496f1;
+    border: lightblue;
+}
