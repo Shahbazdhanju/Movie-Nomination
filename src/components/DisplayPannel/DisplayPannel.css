@@ -1,5 +1,5 @@
-.NominationList{
-    width: 100%;
+.DisplayPannel{
+    width: 100px;
     background-color: #9ba9d6;
     display: flex;
     flex-flow: column;

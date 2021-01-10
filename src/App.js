@@ -1,8 +1,7 @@
 import "./App.css";
 import Layout from "./components/Layout/Layout";
-import NominationList from "./components/NominationList/NominationList";
 import Aux from "./hoc/Auxiliary";
-
+import Search from "./container/Search/Search";
 function App() {
   return (
     <Aux>
@@ -11,8 +10,8 @@ function App() {
         <h1>Movie DB</h1>
       </header> 
       <Layout/>
+      <Search/>
     </div>
-    <NominationList/>
     </Aux>
   );
 }

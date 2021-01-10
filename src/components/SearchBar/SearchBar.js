@@ -1,6 +1,6 @@
 import React from "react";
 import "./SearchBar.css";
 
-const SearchBar = (props) => (<input className="SearchBar" size="100" type="text"/>);
+const SearchBar = (props) => (<input className="SearchBar" type="text" placeholder="Enter movie here.."/>);
 
 export default SearchBar;

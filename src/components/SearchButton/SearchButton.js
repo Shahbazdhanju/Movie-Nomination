@@ -2,7 +2,7 @@ import React from "react";
 import "./SearchButton.css";
 
 const SearchButton = (props) => (
-  <button className="SearchButton" onClick="fetchResult">
+  <button className="SearchButton">
     Search
   </button>
 );

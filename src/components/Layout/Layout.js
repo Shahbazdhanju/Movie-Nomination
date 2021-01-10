@@ -1,13 +1,11 @@
 import React from "react";
-import SearchBar from "../SearchBar/SearchBar";
-import SearchButton from "../SearchButton/SearchButton";
+import Search from "../../container/Search/Search";
 import Aux from "../../hoc/Auxiliary";
 
 const layout = (props) => (
   <Aux>
     <div>
-      <SearchBar />
-      <SearchButton />
+      {/* <Search /> */}
     </div>
     <main className="Layout">{props.children}</main>
   </Aux>
