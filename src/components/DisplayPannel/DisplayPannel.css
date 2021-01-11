@@ -1,10 +1,18 @@
 .DisplayPannel{
-    width: 100px;
+    text-align: left;
+    font-size:x-large;
+    width: 100%;
     background-color: #9ba9d6;
     display: flex;
     flex-flow: column;
-    align-items: center;
+    align-items: left;
     box-shadow: 0 2px 1px #ccc;
-    margin-top: 30px;   
-    padding: 10px 0 500px;
+    margin: 40px 100px 10px 10px;  
+    padding: 50px;
+    width: 100vw;
+}
+
+.resultList{
+    text-align: left;
+    font-size: 30px;
 }

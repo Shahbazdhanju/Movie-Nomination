@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import DisplayPannel from "../../components/DisplayPannel/DisplayPannel";
-//import SearchBar from "../../components/SearchBar/SearchBar";
+import SearchBar from "../../components/SearchBar/SearchBar";
 import SearchButton from "../../components/SearchButton/SearchButton";
 
 //const { API_KEY } = process.env
@@ -13,18 +13,20 @@ class Search extends Component {
     this.state = {
       movieName: "",
       query: "",
-      results: []
+      results: [],
     };
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
     console.log("here is the submit", this.state.movieName);
-    this.getInfo();
-    this.setState({
-      query: this.state.movieName
-    })
-    console.log("here is th quer::",this.state.query)
+    if (this.state.movieName.length > 1) {
+      this.getInfo();
+      this.setState({
+        query: this.state.movieName,
+      });
+    }
+    console.log("here is th quer::", this.state.query);
   };
 
   handleInputChange = (event) => {
@@ -36,13 +38,15 @@ class Search extends Component {
   };
 
   getInfo = () => {
-    axios.get(`${API_URL}&t=${this.state.movieName}`).then(({ data }) => {
+    axios.get(`${API_URL}&s=${this.state.movieName}`).then(({ data }) => {
       console.log("here is data::", data);
       console.log("here is data.data::", data.Response);
-      if(data.Response){
+      if (data.Response === "True") {
         this.setState({
-          results: data.Year,
+          results: data.Search,
         });
+      } else {
+        alert("Please enter the movie name again!");
       }
     });
   };
@@ -54,15 +58,10 @@ class Search extends Component {
       <div>
         <strong>Movie name is : {movieName}</strong>
         <form onSubmit={this.handleSubmit}>
-          <input
-            size="100"
-            type="text"
-            name="movieName"
-            onChange={this.handleInputChange}
-          />
+          <SearchBar name="movieName" onChange={this.handleInputChange} />
           <SearchButton />
         </form>
-        <DisplayPannel results= {this.state.results}/>
+        <DisplayPannel typed={movieName} results={this.state.results} />
       </div>
     );
   }
