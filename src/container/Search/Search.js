@@ -5,7 +5,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import SearchButton from "../../components/SearchButton/SearchButton";
 
 //const { API_KEY } = process.env
-const API_URL = "http://www.omdbapi.com/?i=tt3896198&apikey=cba1d777";
+const API_URL = "https://www.omdbapi.com/?i=tt3896198&apikey=cba1d777";
 
 class Search extends Component {
   constructor(props) {
