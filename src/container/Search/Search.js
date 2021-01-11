@@ -56,7 +56,6 @@ class Search extends Component {
 
     return (
       <div>
-        <strong>Movie name is : {movieName}</strong>
         <form onSubmit={this.handleSubmit}>
           <SearchBar name="movieName" onChange={this.handleInputChange} />
           <SearchButton />
