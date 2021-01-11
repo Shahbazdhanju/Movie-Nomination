@@ -1,18 +1,40 @@
-.DisplayPannel{
-    text-align: left;
-    font-size:x-large;
-    width: 100%;
-    background-color: #9ba9d6;
-    display: flex;
-    flex-flow: column;
-    align-items: left;
-    box-shadow: 0 2px 1px #ccc;
-    margin: 40px 100px 10px 10px;  
-    padding: 50px;
-    width: 100vw;
+.DisplayPannel {
+  margin: 10px 0px;
 }
 
-.resultList{
-    text-align: left;
-    font-size: 30px;
+.resultList {
+  text-align: left;
+  font-size: 30px;
+}
+
+.sectionLeft {
+  width: 55%;
+  float: left;
+  height: 900px;
+  background: grey;
+  text-align: left;
+  font-size: 20px;
+  margin-left: 3%;
+  border-radius: 5px;
+}
+.right {
+  width: 35%;
+  float: left;
+  height: 900px;
+  background-color: grey;
+  border-left: 2px solid black;
+  margin-left: 3%;
+  margin-right: 3%;
+  border-radius: 5px;
+}
+
+.addButton {
+  border-radius: "6px";
+  padding: 6px;
+  background-color: black;
+  color: azure;
+  border-radius: 20%;
+}
+.addButton:hover {
+  background-color: rgb(37, 33, 33);
 }
