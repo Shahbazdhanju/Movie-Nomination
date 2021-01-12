@@ -3,6 +3,7 @@ import axios from "axios";
 import DisplayPannel from "../../components/DisplayPannel/DisplayPannel";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import SearchButton from "../../components/SearchButton/SearchButton";
+import './Search.css';
 
 const API_URL = process.env.REACT_APP_API_URL
 
@@ -52,7 +53,7 @@ class Search extends Component {
     const { movieName } = this.state;
 
     return (
-      <div>
+      <div className="Search">
         <form onSubmit={this.handleSubmit}>
           <SearchBar name="movieName" onChange={this.handleInputChange} />
           <SearchButton />

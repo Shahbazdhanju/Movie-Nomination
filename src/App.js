@@ -9,7 +9,9 @@ function App() {
         <header className="App-header">
           <h1>Your movie nomination list!</h1>
         </header>
+        <main style={{backgroundColor:"lightblue"}}>
         <Search/>
+        </main>
       </div>
     </Aux>
   );

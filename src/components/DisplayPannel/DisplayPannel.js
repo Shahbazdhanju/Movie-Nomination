@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import NominationList from "../NominationList/NominationList";
 import "./DisplayPannel.css";
-import styled from "styled-components";
 
 const DisplayPannel = (props) => {
   const [count, setCount] = useState(0);
   const [movieList, setMovieList] = useState([]);
   const [moviename, setmoviename] = useState("");
 
-  const nominationHandler = (t, y) => {
+  const nominationHandler = (title, year, id) => {
     if (count === 5) {
       alert("You have reached the limit of 5.");
     } else {
@@ -16,8 +15,9 @@ const DisplayPannel = (props) => {
       setMovieList([
         ...movieList,
         {
-          Title: t,
-          Year: y,
+          Title: title,
+          Year: year,
+          Key: id,
         },
       ]);
     }
@@ -32,14 +32,25 @@ const DisplayPannel = (props) => {
     movieList.splice(i, 1);
   };
 
+  const movieExists = (id) => {
+     console.log("here is the id", id, movieList);
+    // let obj;
+    // if (id) {
+    //   for (obj in movieList) {
+    //     if (obj.Key === id) return false;
+    //   }
+    // }
+    return true;
+  };
+
   const listOfResult = props.results.map((r) => (
     <p className="resultList" key={r.imdbID}>
-      <span className="tspan"> Title : {r.Title}</span>
-      <span>Year released{r.Year}</span>
-
+      <span className="tspan">Title : {r.Title}</span>
+      <span>Year released : {r.Year}</span>
       <button
         className="addButton"
-        onClick={(e) => nominationHandler(r.Title, r.Year)}
+        // disabled={(e)=> movieExists(r.imdbID)}
+        onClick={(e) => nominationHandler(r.Title, r.Year, r.imdbID)}
       >
         Add
       </button>
@@ -49,8 +60,7 @@ const DisplayPannel = (props) => {
   const nominationList = movieList.map((r, i) => (
     <p key={i}>
       <span className="tspan"> Title : {r.Title}</span>
-      <span>Year released{r.Year}</span>
-
+      <span>Year released : {r.Year}</span>
       <button
         className="removeButton"
         onClick={(e) => removeNominationHandler(i)}
