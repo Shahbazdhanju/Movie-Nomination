@@ -5,36 +5,48 @@
 .resultList {
   text-align: left;
   font-size: 30px;
+  right:70px;
 }
 
 .sectionLeft {
   width: 55%;
   float: left;
-  height: 900px;
-  background: grey;
-  text-align: left;
+  height:1200px;
+  background: rgb(60, 95, 211);
+  border: 2px solid black;
   font-size: 20px;
   margin-left: 3%;
   border-radius: 5px;
-}
-.right {
-  width: 35%;
-  float: left;
-  height: 900px;
-  background-color: grey;
-  border-left: 2px solid black;
-  margin-left: 3%;
-  margin-right: 3%;
-  border-radius: 5px;
+  text-align: center;
 }
 
-.addButton {
+.sectionLeft .addButton {
+  position:absolute;
   border-radius: "6px";
-  padding: 6px;
   background-color: black;
   color: azure;
   border-radius: 20%;
+  outline:none;
+  padding: 12px 28px;
+  right:44%;
 }
-.addButton:hover {
+
+.removeButton {
+  border-radius: "6px";
+  background-color: rgb(197, 92, 92);
+  color: azure;
+  border-radius: 20%;
+  outline:none;
+  display: inline-block;
+  padding: 10px 16px;
+  position: absolute;
+  right: 6%;
+}
+.displayButton:hover {
   background-color: rgb(37, 33, 33);
+}
+
+.tspan{
+  padding-right: 15px;
+  display: block;
 }

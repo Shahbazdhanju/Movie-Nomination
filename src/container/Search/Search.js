@@ -3,9 +3,9 @@ import axios from "axios";
 import DisplayPannel from "../../components/DisplayPannel/DisplayPannel";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import SearchButton from "../../components/SearchButton/SearchButton";
+import './Search.css';
 
-//const { API_KEY } = process.env
-const API_URL = "https://www.omdbapi.com/?i=tt3896198&apikey=cba1d777";
+const API_URL = process.env.REACT_APP_API_URL
 
 class Search extends Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class Search extends Component {
       results: [],
     };
   }
-
+  
   handleSubmit = (event) => {
     event.preventDefault();
     console.log("here is the submit", this.state.movieName);
@@ -39,8 +39,6 @@ class Search extends Component {
 
   getInfo = () => {
     axios.get(`${API_URL}&s=${this.state.movieName}`).then(({ data }) => {
-      console.log("here is data::", data);
-      console.log("here is data.data::", data.Response);
       if (data.Response === "True") {
         this.setState({
           results: data.Search,
@@ -55,7 +53,7 @@ class Search extends Component {
     const { movieName } = this.state;
 
     return (
-      <div>
+      <div className="Search">
         <form onSubmit={this.handleSubmit}>
           <SearchBar name="movieName" onChange={this.handleInputChange} />
           <SearchButton />
