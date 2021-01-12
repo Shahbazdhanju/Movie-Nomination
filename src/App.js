@@ -1,5 +1,4 @@
 import "./App.css";
-// import Layout from "./components/Layout/Layout";
 import Aux from "./hoc/Auxiliary";
 import Search from "./container/Search/Search";
 
@@ -10,8 +9,7 @@ function App() {
         <header className="App-header">
           <h1>Your movie nomination list!</h1>
         </header>
-        {/* <Layout /> */}
-        <Search />
+        <Search/>
       </div>
     </Aux>
   );
