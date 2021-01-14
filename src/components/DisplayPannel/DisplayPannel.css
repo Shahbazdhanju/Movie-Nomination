@@ -58,36 +58,25 @@
   display: block;
 }
 
-@media (max-width: 425px) and (min-height: 748px) {
+@media (max-width: 900px) and (min-height: 805px) {
   .sectionLeft {
     width: 100%;
-    height: auto;
+    height: fit-content;
   }
   .addButton{
     padding: 6px 8px;
     right: 0%;
   }
 }
-@media (max-width: 500px) and (min-height: 749px) {
+
+@media (min-width: 1023px) and (min-height: 804px){
   .sectionLeft {
-    width: 100%;
-    height:auto;
-  }
-  .addButton{
-    padding: 6px 8px;
-    right: 0%;
+    width: 55%;
+    height: 1200px;
   }
 }
-@media (min-width: 501px) and (min-height: 750px) {
-  .sectionLeft {
-    width: 100%;
-    height: auto;
-  }
-  .addButton{
-    padding: 6px 8px;
-  }
-}
-@media (min-width: 1024px) and (min-height: 751px) {
+
+@media (min-width: 901px) and (min-height: 1074px){
   .sectionLeft {
     width: 55%;
     height: 1200px;
