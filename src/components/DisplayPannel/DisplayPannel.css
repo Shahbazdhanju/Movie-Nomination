@@ -20,7 +20,7 @@
   text-align: center;
 }
 
-.sectionLeft .addButton {
+.addButton {
   position: absolute;
   background-color: rgb(49, 42, 42);
   color: azure;
@@ -63,14 +63,19 @@
     width: 100%;
     height: auto;
   }
-  .sectionLeft .addButton{
-    padding: 6px 12px;
+  .addButton{
+    padding: 6px 8px;
+    right: 0%;
   }
 }
-@media (max-width: 500px) and (min-height: 401px) {
+@media (max-width: 500px) and (min-height: 749px) {
   .sectionLeft {
     width: 100%;
     height:auto;
+  }
+  .addButton{
+    padding: 6px 8px;
+    right: 0%;
   }
 }
 @media (min-width: 900px) and (min-height: 700px) {
