@@ -80,7 +80,7 @@
 }
 @media (min-width: 501px) and (min-height: 750px) {
   .sectionLeft {
-    width: 55%;
+    width: 100%;
     height: auto;
   }
   .addButton{
