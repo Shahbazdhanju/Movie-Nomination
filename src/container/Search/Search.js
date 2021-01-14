@@ -3,9 +3,9 @@ import axios from "axios";
 import DisplayPannel from "../../components/DisplayPannel/DisplayPannel";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import SearchButton from "../../components/SearchButton/SearchButton";
-import './Search.css';
+import "./Search.css";
 
-const API_URL = process.env.REACT_APP_API_URL
+const API_URL = process.env.REACT_APP_API_URL;
 
 class Search extends Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class Search extends Component {
       results: [],
     };
   }
-  
+
   handleSubmit = (event) => {
     event.preventDefault();
     console.log("here is the submit", this.state.movieName);

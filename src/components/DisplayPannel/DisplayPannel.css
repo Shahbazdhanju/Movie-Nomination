@@ -5,13 +5,13 @@
 .resultList {
   text-align: left;
   font-size: 30px;
-  right:70px;
+  right: 70px;
 }
 
 .sectionLeft {
   width: 55%;
   float: left;
-  height:1200px;
+  height: 1200px;
   background: rgb(60, 95, 211);
   border: 2px solid black;
   font-size: 20px;
@@ -20,15 +20,22 @@
   text-align: center;
 }
 
-.sectionLeft .addButton {
-  position:absolute;
-  border-radius: "6px";
-  background-color: black;
+.addButton {
+  position: absolute;
+  background-color: rgb(49, 42, 42);
   color: azure;
   border-radius: 20%;
-  outline:none;
+  outline: none;
   padding: 12px 28px;
-  right:44%;
+  right: 44%;
+}
+
+.addButton:disabled {
+  background-color: rgb(233, 231, 231);
+  color: rgb(165, 172, 172);
+}
+.addButton:hover {
+  background-color: rgb(2, 2, 2);
 }
 
 .removeButton {
@@ -36,17 +43,44 @@
   background-color: rgb(197, 92, 92);
   color: azure;
   border-radius: 20%;
-  outline:none;
+  outline: none;
   display: inline-block;
   padding: 10px 16px;
   position: absolute;
   right: 6%;
 }
-.displayButton:hover {
-  background-color: rgb(37, 33, 33);
+.removeButton:hover {
+  background-color: rgb(204, 52, 52);
 }
 
-.tspan{
+.tspan {
   padding-right: 15px;
   display: block;
+}
+
+@media (max-width: 425px) and (min-height: 748px) {
+  .sectionLeft {
+    width: 100%;
+    height: auto;
+  }
+  .addButton{
+    padding: 6px 8px;
+    right: 0%;
+  }
+}
+@media (max-width: 500px) and (min-height: 749px) {
+  .sectionLeft {
+    width: 100%;
+    height:auto;
+  }
+  .addButton{
+    padding: 6px 8px;
+    right: 0%;
+  }
+}
+@media (min-width: 900px) and (min-height: 700px) {
+  .sectionLeft {
+    width: 55%;
+    height: 1200px;
+  }
 }

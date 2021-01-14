@@ -5,9 +5,35 @@ import "./DisplayPannel.css";
 const DisplayPannel = (props) => {
   const [count, setCount] = useState(0);
   const [movieList, setMovieList] = useState([]);
-  const [moviename, setmoviename] = useState("");
+  const [resultList, setResultList] = useState([]);
+  const [disabledIds, setDisabledIds] = useState([]);
 
-  const nominationHandler = (title, year, id) => {
+  const removeNominationHandler = (i, id) => {
+    setCount(count - 1);
+    movieList.splice(i, 1);
+    var elementExists = document.getElementById(id);
+    const index = disabledIds.indexOf(id);
+    if (index > -1) {
+      disabledIds.splice(index, 1);
+    }
+  };
+
+  const listOfResult = props.results.map((r, i) => (
+    <p className="resultList" key={i}>
+      <span className="tspan">Title : {r.Title}</span>
+      <span>Year released : {r.Year}</span>
+      <button
+        id={r.imdbID}
+        className="addButton"
+        disabled={disabledIds.includes(r.imdbID)}
+        onClick={() => nominationHandler(r.Title, r.Year, r.imdbID, i)}
+      >
+        Nominate
+      </button>
+    </p>
+  ));
+
+  const nominationHandler = (title, year, id, bool, i) => {
     if (count === 5) {
       alert("You have reached the limit of 5.");
     } else {
@@ -20,50 +46,19 @@ const DisplayPannel = (props) => {
           Key: id,
         },
       ]);
+      setDisabledIds([...disabledIds, id]);
     }
   };
-
-  const removeNominationHandler = (i) => {
-    if (count === 0) {
-      alert("Nothing to remove!");
-    } else {
-      setCount(count - 1);
-    }
-    movieList.splice(i, 1);
-  };
-
-  const movieExists = (id) => {
-     console.log("here is the id", id, movieList);
-    // let obj;
-    // if (id) {
-    //   for (obj in movieList) {
-    //     if (obj.Key === id) return false;
-    //   }
-    // }
-    return true;
-  };
-
-  const listOfResult = props.results.map((r) => (
-    <p className="resultList" key={r.imdbID}>
-      <span className="tspan">Title : {r.Title}</span>
-      <span>Year released : {r.Year}</span>
-      <button
-        className="addButton"
-        // disabled={(e)=> movieExists(r.imdbID)}
-        onClick={(e) => nominationHandler(r.Title, r.Year, r.imdbID)}
-      >
-        Add
-      </button>
-    </p>
-  ));
 
   const nominationList = movieList.map((r, i) => (
     <p key={i}>
       <span className="tspan"> Title : {r.Title}</span>
-      <span>Year released : {r.Year}</span>
+      <span>
+        Year released : {r.Year}
+      </span>
       <button
         className="removeButton"
-        onClick={(e) => removeNominationHandler(i)}
+        onClick={(e) => removeNominationHandler(i, r.Key)}
       >
         Remove
       </button>
