@@ -78,9 +78,20 @@
     right: 0%;
   }
 }
-@media (min-width: 900px) and (min-height: 700px) {
+@media (min-width: 501px) and (min-height: 750px) {
+  .sectionLeft {
+    width: 100%;
+    height: auto;
+  }
+  .addButton{
+    padding: 6px 8px;
+    right: 0%;
+  }
+}
+@media (min-width: 1024px) and (min-height: 751px) {
   .sectionLeft {
     width: 55%;
     height: 1200px;
   }
 }
+
