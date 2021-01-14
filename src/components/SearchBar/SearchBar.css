@@ -5,7 +5,15 @@
     font-size: larger;
     position: relative;
     border-radius: 5px;
+    width: 600px;
 }
 .SearchBar:hover{
     background-color: #6496f1;
 }
+
+
+@media (max-width : 500px) and (min-height:400px){
+    .SearchBar{
+      width: 200px;
+    }
+  }

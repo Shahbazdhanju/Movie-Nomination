@@ -4,6 +4,7 @@
     border-radius: 12px;
     background-color: #9ba9d6;
     outline:none;
+    position:sticky;
 }
 .SearchButton:hover{
     background-color: #6496f1;
