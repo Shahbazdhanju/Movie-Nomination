@@ -2,13 +2,12 @@
 Here is the deployed Link: (click on it and get your movies nominationed): https://shahbazdhanju.github.io/movie-nomination/
 
 ## In order to run this application locally make sure you have installed npm package.
-Technology used:
-...
-  Javascript
-  React
-  HTML and CSS
-  Media Query
-...
+Technologies:
+  * NPM 
+  * Javascript
+  * React
+  * HTML and CSS
+  * Media Query
   
 You can run the app using:
 ### `npm start`
